@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Leyla Alasgarli</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="content-column">
+            <header class="site-header">
+                <img class="header-photo" src="profile photo for the website/Profile Photo.jpg" alt="Leyla Alasgarli">
+                <a href="index.html" class="logo">Leyla Alasgarli</a>
+            </header>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="text-container">
+                <h1>My Motivation to Study</h1>
+                <p>People love to say that learning must come from pure inspiration.
+                    Mine comes from a simpler place: I want a good life.
+                    Not yachts or diamonds — just stability, independence, and the ability to buy coffee without calculating my monthly budget in my head. Maybe even a job where I solve real problems instead of surviving them.
+                    I do not always enjoy studying. But every topic I master moves me closer to a future where I choose my own path — not the one circumstances push me into.
+                    So yes, I study to grow.
+                    But I also study to live better.
+                    And honestly, that is motivation enough.</p>
+            </div>
+            <div>          
+    </main>
+    <footer>
+        <p>&copy; 2025 <a href="#" class="scroll-to-top">Leyla Alasgarli</a></p>
+        <p>Built with HTML and CSS</p>
+        <p>Crafted with Passion</p>
+        <p><a href="#" class="license-link">License</a></p>
+    </footer>
+    
+   
+    <div id="license-modal" class="license-modal">
+        <div class="license-modal-content">
+            <span class="license-close">&times;</span>
+            <h2>License</h2>
+            <p>This website and its content are created by Leyla Alasgarli. You may not copy or redistribute without permission.</p>
+        </div>
+    </div>
+    <script>
+        
+        const navLinks = document.querySelectorAll('.main-nav a');
+        const logoLink = document.querySelector('.site-header .logo');
+        
+        // Set active link based on current page
+        const currentPage = window.location.pathname.split('/').pop() || 'blog.html';
+        navLinks.forEach((link, index) => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === currentPage || (linkHref === 'blog.html' && currentPage.includes('blog'))) {
+                link.classList.add('active');
+            }
+        });
+        
+        const scrollToTopLink = document.querySelector('.scroll-to-top');
+        if (scrollToTopLink) {
+            scrollToTopLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        
+      
+        const licenseLink = document.querySelector('.license-link');
+        const licenseModal = document.getElementById('license-modal');
+        const licenseClose = document.querySelector('.license-close');
+        
+        if (licenseLink && licenseModal) {
+            licenseLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                licenseModal.style.display = 'block';
+            });
+        }
+        
+        
+        if (licenseClose) {
+            licenseClose.addEventListener('click', function() {
+                licenseModal.style.display = 'none';
+            });
+        }
+        
+        if (licenseModal) {
+            licenseModal.addEventListener('click', function(e) {
+                if (e.target === licenseModal) {
+                    licenseModal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html> 

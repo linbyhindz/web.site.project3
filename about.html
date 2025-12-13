@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Leyla Alasgarli</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="content-column">
+            <header class="site-header">
+                <img class="header-photo" src="profile photo for the website/Profile Photo.jpg" alt="Leyla Alasgarli">
+                <a href="index.html" class="logo">Leyla Alasgarli</a>
+            </header>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="about-content">
+                <div class="about-content">
+                    <h1>About Me</h1>
+                
+                    <div class="about-text"></div>
+
+                    <div class="about-icons">
+                        <div class="about-card">
+                            <span class="icon">🎓</span>
+                            <h3>Education</h3>
+                            <p>Graduate of School No. 249.Since middle school, I have been passionate about exact sciences such as computer science, physics, and mathematics.This motivated me to prepare for the 1-st group's exams. I was admitted through the State Examination Center, scoring 670.9 out of 700, and entered ADA University on the governmental basis.</p>
+                        </div>
+                
+                        <div class="about-card">
+                            <span class="icon">💻</span>
+                            <h3>Programming</h3>
+                            <p>In terms of programming, I am familiar with Python, basic C++ and HTML. While preparing for the SEC exam, I wrote over <b>100 Python programs</b> that solved fundamental mathematical problems. I have learnt HTML while preparing for the SEC exam as well. However, in order to learn C++, <b>Codecademy courses</b> were very helpful.</p>
+                        </div>
+                 
+                        <div class="about-card">
+                            <span class="icon">🌍</span>
+                            <h3>Languages</h3>
+                            <p>I speak <b>four languages</b>:Russian, English, Azerbaijani, and Turkish. In future, I aim to learn whether German or Chinese. Learning foreign languages is one of the most important parts of my life, this process seems to be exciting. Besides the interest, it is a necessity, because learning languages is an important tool for success and education. That is why I strive to expand my knowledge.</p>
+                        </div>
+                
+                        <div class="about-card">
+                            <span class="icon">🎶</span>
+                            <h3>Hobbies</h3>
+                            <p>Besides IT, I enjoy sports, especially fitness, cycling, and swimming. I also graduated from Music School No. 25 with a major in violin and piano as my second instrument. Over the years, I have explored various creative hobbies, including drawing and dancing. I truly love music, especially rock, and I enjoy reading both fiction and psychology/science literature.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 <a href="#" class="scroll-to-top">Leyla Alasgarli</a></p>
+        <p>Built with HTML and CSS</p>
+        <p>Crafted with Passion</p>
+        <p><a href="#" class="license-link">License</a></p>
+    </footer>
+    
+   
+    <div id="license-modal" class="license-modal">
+        <div class="license-modal-content">
+            <span class="license-close">&times;</span>
+            <h2>License</h2>
+            <p>This website and its content are created by Leyla Alasgarli. You may not copy or redistribute without permission.</p>
+        </div>
+    </div>
+    <script>
+       
+        const navLinks = document.querySelectorAll('.main-nav a');
+        const logoLink = document.querySelector('.site-header .logo');
+        
+        
+        const currentPage = window.location.pathname.split('/').pop() || 'about.html';
+        navLinks.forEach((link, index) => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === currentPage || (linkHref === 'about.html' && currentPage.includes('about'))) {
+                link.classList.add('active');
+            }
+        });
+        
+        
+        const scrollToTopLink = document.querySelector('.scroll-to-top');
+        if (scrollToTopLink) {
+            scrollToTopLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        
+        
+        const licenseLink = document.querySelector('.license-link');
+        const licenseModal = document.getElementById('license-modal');
+        const licenseClose = document.querySelector('.license-close');
+        
+        if (licenseLink && licenseModal) {
+            licenseLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                licenseModal.style.display = 'block';
+            });
+        }
+        
+        
+        if (licenseClose) {
+            licenseClose.addEventListener('click', function() {
+                licenseModal.style.display = 'none';
+            });
+        }
+        
+        
+        if (licenseModal) {
+            licenseModal.addEventListener('click', function(e) {
+                if (e.target === licenseModal) {
+                    licenseModal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

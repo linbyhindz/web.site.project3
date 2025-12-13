@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leyla Alasgarli</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="content-column">
+            <header class="site-header">
+                <img class="header-photo" src="profile photo for the website/Profile Photo.jpg" alt="Leyla Alasgarli">
+                <a href="index.html" class="logo">Leyla Alasgarli</a>
+            </header>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="text-container">
+                <h1>Hi, I'm Leyla Alasgarli, an <u>Information Technologies</u> student at <u>ADA university</u></h1>
+                <p>I'm a future cybersecurity engineer, fascinated by the challenges that technology and digital security bring. I love diving into technical problems that require analytical thinking, creativity, and persistence. IT has always drawn me in because it combines logic, innovation, and constant self-development. My goal is to grow not only as a professional but also as someone who can think critically, solve problems efficiently, and bring a touch of personality and creativity to the digital world.</p>
+                <p><a href="#" class="cta-button secondary" id="about-link">Discover more about me and my acheivements</a></p>
+                
+                <img class="profile-photo" src="profile photo for the website/Profile Photo.jpg" alt="Leyla Alasgarli smiling portrait">
+                
+                <nav class="social-links">
+                    <h2 class="find-me">Find me on the web…</h2>
+                    <ul>
+                        <li><a href="https://www.codecademy.com/profiles/py1312581195"><i class="fas fa-graduation-cap"></i> <span>Codecademy</span></a></li>
+                        <li><a href="index.html"><i class="fab fa-github"></i> <span>Github profile</span></a></li>
+                        <li><a href="index.html"><i class="fas fa-code-branch"></i> <span>Github repository</span></a></li>
+                        <li><a href="mailto:lalasgarli27080@ada.edu.az"><i class="fas fa-envelope"></i> <span>Contact me via email</span></a></li>
+                        <li><a href="index.html"><i class="fab fa-linkedin"></i> <span>LinkedIn</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 <a href="#" class="scroll-to-top">Leyla Alasgarli</a></p>
+        <p>Built with HTML and CSS</p>
+        <p>Crafted with Passion</p>
+        <p><a href="#" class="license-link">License</a></p>
+    </footer>
+    
+    <div id="license-modal" class="license-modal">
+        <div class="license-modal-content">
+            <span class="license-close">&times;</span>
+            <h2>License</h2>
+            <p>This website and its content are created by Leyla Alasgarli. You may not copy or redistribute without permission.</p>
+        </div>
+    </div>
+    <script>
+        const navLinks = document.querySelectorAll('.main-nav a');
+        const logoLink = document.querySelector('.site-header .logo');
+        
+     
+        function removeActiveFromNav() {
+            navLinks.forEach(link => link.classList.remove('active'));
+        }
+        
+        
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        navLinks.forEach((link, index) => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html') || (currentPage === 'index.html' && index === 0)) {
+                link.classList.add('active');
+            }
+        });
+        
+       
+        logoLink.setAttribute('href', 'index.html');
+        
+       
+        const aboutLink = document.getElementById('about-link');
+        if (aboutLink) {
+            aboutLink.setAttribute('href', 'about.html');
+        }
+        
+        
+        const scrollToTopLink = document.querySelector('.scroll-to-top');
+        if (scrollToTopLink) {
+            scrollToTopLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        
+        
+        const licenseLink = document.querySelector('.license-link');
+        const licenseModal = document.getElementById('license-modal');
+        const licenseClose = document.querySelector('.license-close');
+        
+        if (licenseLink && licenseModal) {
+            licenseLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                licenseModal.style.display = 'block';
+            });
+        }
+        
+        
+        if (licenseClose) {
+            licenseClose.addEventListener('click', function() {
+                licenseModal.style.display = 'none';
+            });
+        }
+ 
+        if (licenseModal) {
+            licenseModal.addEventListener('click', function(e) {
+                if (e.target === licenseModal) {
+                    licenseModal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
