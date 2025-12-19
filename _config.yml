@@ -1,5 +1,12 @@
 title: "Leyla Alasgarli"
 email: "lalasgarli27080@ada.edu.az"
 description: "A simple Jekyll site for my project"
-baseurl: ""
+baseurl: "/web.site.project3"
 url: "https://linbyhindz.github.io/web.site.project3/index.html"
+
+theme: null
+markdown: kramdown
+plugins: []
+
+exclude:
+- README.md
