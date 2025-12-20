@@ -44,11 +44,7 @@ title: About
             </div>
     </main>
    
-        <p>&copy; 2025 <a href="#" class="scroll-to-top">Leyla Alasgarli</a></p>
-        <p>Built with HTML and CSS</p>
-        <p>Crafted with Passion</p>
-        <p><a href="#" class="license-link">License</a></p>
-   
+        
     
    
     <div id="license-modal" class="license-modal">
@@ -60,54 +56,4 @@ title: About
     </div>
     <script>
        
-        const navLinks = document.querySelectorAll('.main-nav a');
-        const logoLink = document.querySelector('.site-header .logo');
         
-        
-        const currentPage = window.location.pathname.split('/').pop() || 'about.html';
-        navLinks.forEach((link, index) => {
-            const linkHref = link.getAttribute('href');
-            if (linkHref === currentPage || (linkHref === 'about.html' && currentPage.includes('about'))) {
-                link.classList.add('active');
-            }
-        });
-        
-        
-        const scrollToTopLink = document.querySelector('.scroll-to-top');
-        if (scrollToTopLink) {
-            scrollToTopLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        }
-        
-        
-        const licenseLink = document.querySelector('.license-link');
-        const licenseModal = document.getElementById('license-modal');
-        const licenseClose = document.querySelector('.license-close');
-        
-        if (licenseLink && licenseModal) {
-            licenseLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                licenseModal.style.display = 'block';
-            });
-        }
-        
-        
-        if (licenseClose) {
-            licenseClose.addEventListener('click', function() {
-                licenseModal.style.display = 'none';
-            });
-        }
-        
-        
-        if (licenseModal) {
-            licenseModal.addEventListener('click', function(e) {
-                if (e.target === licenseModal) {
-                    licenseModal.style.display = 'none';
-                }
-            });
-        }
-    </script>
-</body>
-</html>
