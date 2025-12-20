@@ -1,15 +1,88 @@
----
-layout: default
-title: Projects
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Leyla Alasgarli</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      
+        main {
+            padding-top: 20px; 
+        }
 
-    
+        .content-column {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
+        .project-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .project-title {
+            font-size: 28px;      
+            margin-top: 0;         
+            margin-bottom: 12px;   
+            color: #222;
+        }
+
+        .project-description {
+            font-size: 16px;      
+            line-height: 1.6;
+            margin-top: 0;        
+            margin-bottom: 16px;  
+            color: #333;
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 560px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            margin-top: 12px;     
+            margin-bottom: 12px;  
+        }
+
+        .project-screenshots {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 8px;     
+        }
+
+        .project-image-small {
+            width: 180px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+     </style>
+</head>
+<body>
     <main>
         <div class="content-column">
-            
+            <header class="site-header">
+                <img class="header-photo" src="profile photo for the website/Profile Photo.jpg" alt="Leyla Alasgarli">
+                <a href="index.html" class="logo">Leyla Alasgarli</a>
+            </header>
 
-            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
 
             <div class="project-card">
                 <h1 class="project-title">Project 1: Basic logic gates construction</h1>
@@ -34,9 +107,12 @@ title: Projects
         </div>
     </main>
 
-   
-        
-   
+    <footer>
+        <p>&copy; 2025 <a href="#" class="scroll-to-top">Leyla Alasgarli</a></p>
+        <p>Built with HTML and CSS</p>
+        <p>Crafted with Passion</p>
+        <p><a href="#" class="license-link">License</a></p>
+    </footer>
 
     <div id="license-modal" class="license-modal">
         <div class="license-modal-content">
@@ -46,4 +122,44 @@ title: Projects
         </div>
     </div>
 
-    
+    <script>
+        const navLinks = document.querySelectorAll('.main-nav a');
+        const currentPage = window.location.pathname.split('/').pop() || 'projects.html';
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage || (link.getAttribute('href') === 'projects.html' && currentPage.includes('projects'))) {
+                link.classList.add('active');
+            }
+        });
+
+        const scrollToTopLink = document.querySelector('.scroll-to-top');
+        if (scrollToTopLink) {
+            scrollToTopLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        const licenseLink = document.querySelector('.license-link');
+        const licenseModal = document.getElementById('license-modal');
+        const licenseClose = document.querySelector('.license-close');
+        if (licenseLink && licenseModal) {
+            licenseLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                licenseModal.style.display = 'block';
+            });
+        }
+        if (licenseClose) {
+            licenseClose.addEventListener('click', function() {
+                licenseModal.style.display = 'none';
+            });
+        }
+        if (licenseModal) {
+            licenseModal.addEventListener('click', function(e) {
+                if (e.target === licenseModal) {
+                    licenseModal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
