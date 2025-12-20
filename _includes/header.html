@@ -1,8 +1,13 @@
-<header>
-  <nav>
-    <a href="{{ '/' | relative_url }}">Home</a>
-    <a href="{{ '/about.html' | relative_url }}">About</a>
-    <a href="{{ '/projects.html' | relative_url }}">Projects</a>
-    <a href="{{ '/blog.html' | relative_url }}">Blog</a>
-  </nav>
+<header class="site-header">
+  <img class="header-photo" src="{{ '/profile photo for the website/Profile Photo.jpg' | relative_url }}" alt="Leyla Alasgarli">
+  <a href="{{ '/index.html' | relative_url }}" class="logo">Leyla Alasgarli</a>
 </header>
+
+<nav class="main-nav">
+  <ul>
+    <li><a href="{{ '/index.html' | relative_url }}">Home</a></li>
+    <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
+    <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
+    <li><a href="{{ '/blog.html' | relative_url }}">Blog</a></li>
+  </ul>
+</nav>
